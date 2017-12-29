@@ -1,7 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MediaMatcher } from '@angular/cdk/layout';
+import {
+  MatButtonModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatCheckboxModule,
+  MatListModule,
+  MatCardModule,
+  MatIconModule,
+  MatMenuModule,
+  MatExpansionModule
+} from '@angular/material';
 import { AppComponent } from './app.component';
 
 
@@ -10,9 +22,20 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatListModule,
+    MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    MatExpansionModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MediaMatcher],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

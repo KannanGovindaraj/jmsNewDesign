@@ -1,0 +1,169 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+  #headerImage {
+    position: fixed;
+    z-index: 2;
+    width: 135px;
+    background: wheat;
+    height: 50px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 9px -3px rgba(1,2,3,.4);
+  }
+  #headerImage img {
+      width: 100px;
+  }
+  .mat-sidenav {
+    width: 135px !important;
+    box-shadow: 3px 0 6px rgba(19, 18, 18, 0.32);
+  }
+  .mat-toolbar {
+    position: relative;
+    z-index: 2;
+    margin-left: 135px;
+    width: calc(100% - 135px);
+    background: white !important;
+    color: black !important;
+    box-shadow: -1px 7px 16px -5px rgba(1,2,3,.4);
+  }
+  .headerContainer {
+    width: 100%;
+  }
+  .mat-toolbar-single-row {
+    height: 50px !important;
+  }
+  .mat-nav-list {
+    padding-top: 0px; 
+  }
+  .mat-list-item {
+    border-bottom: 1px solid #e7fcff;
+    box-shadow: 0px 0px 36px -9px rgb(208, 208, 208);
+  }
+  .mat-nav-list .mat-list-item .mat-list-icon {
+    width: 19px;
+    height: 13px;
+    font-size: 15px ;
+    padding: 2px;
+    color: #275578;
+  }
+  .mat-list-item-content {
+    padding: 1px 3px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    height: inherit;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .profileDiv {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    
+  }
+  .profileDiv img {
+    width: 20px;
+    margin-right: 4px;
+  }
+  mat-sidenav-content { 
+    background: #EAF3FA; 
+    /*padding: 20px 20px 0px 20px;*/
+  }
+  .sideNavContainer {
+    padding: 10px;
+  }
+  .incomeClass {
+    height: 100px;
+    background: #FD5454;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    padding: 7px;
+  }
+  .downloadClass {
+    height: 100px;
+    background: #5AC9FF;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    padding: 7px;
+  }
+  .newViewClass {
+    height: 100px;
+    background: #FED228;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    padding: 7px;
+  }
+  .commentClass {
+    height: 100px;
+    background: #32D36B;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    padding: 7px;
+  }
+  .dataContainer {
+    width: 100%;
+    height: 100%;
+    color: #fbf3f3;
+  }
+  .paraText {
+    margin:0;
+    font-size: 14px;
+  }
+  .textCenter {
+    text-align: center;
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  #userList mat-card mat-card-header .mat-card-header-text {
+    margin: 0px !important;
+  }
+  #userList mat-icon {
+    border: 1px solid #1372a0;
+    border-radius: 50%;
+    padding: 1px;
+    color: #496b81;
+  }
+  /* Media Query */
+
+  @media (max-width: 600px) {
+    #headerImage{
+        height: 50px;
+    }
+    .mat-toolbar-single-row {
+      height: 50px !important;
+    }
+    mat-sidenav-container {
+      margin-top: 50px !important;
+    }
+    mat-sidenav {
+      top: 50px !important;
+    }
+  }

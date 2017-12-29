@@ -1,20 +1,182 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <div class="headerContainer">
+    <div id="headerImage">
+      <img src="../assets/header.png" alt="header-logo" />
+    </div>
+    <mat-toolbar class="example-toolbar">
 
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="example-spacer"></span>
+      <div class="profileDiv">
+        <img src="../assets/profile.jpg" alt="profile" />
+        <button mat-button [matMenuTriggerFor]="menu">
+          Kannan G
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>person_outline</mat-icon>
+            <span>Edit Profile</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>lock_outline</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+
+    </mat-toolbar>
+  </div>
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav style="width: 118px;" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" [opened]="true">
+      <mat-nav-list>
+        <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">
+          <mat-icon mat-list-icon>{{nav.navIcon}}</mat-icon> {{nav.navText}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="sideNavContainer">
+        <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="10px">
+          <mat-card fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
+            <div fxFlex="25%" class="incomeClass">
+              <div class="dataContainer" fxLayout="column" fxFlexAlign="center">
+                <div fxLayout="row" fxFlex="50%" style="align-items: center;border-bottom: 1px solid rgb(241, 157, 157)" fxFlexAlign="center center">
+                  <span fxFlex="50%" class="textCenter">
+                    <mat-icon>sentiment_satisfied</mat-icon>
+                  </span>
+                  <span fxFlex="50%">
+                    <p class="paraText" style="font-weight: bold;margin-bottom: 3px;">$12343</p>
+                    <p class="paraText">Income</p>
+                  </span>
+                </div>
+                <div fxLayout="row">
+                  <span style="padding-top: 6px;font-size:11px" class="paraText textCenter">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span>
+                </div>
+              </div>
+            </div>
+            <div fxFlex="25%" class="downloadClass">
+              <div class="dataContainer" fxLayout="column" fxFlexAlign="center">
+                <div fxLayout="row" fxFlex="50%" style="align-items: center;border-bottom: 1px solid #b3ddf1;" fxFlexAlign="center center">
+                  <span fxFlex="50%" class="textCenter">
+                    <mat-icon>cloud_download</mat-icon>
+                  </span>
+                  <span fxFlex="50%">
+                    <p class="paraText" style="font-weight: bold;margin-bottom: 3px;">12343</p>
+                    <p class="paraText">Downloads</p>
+                  </span>
+                </div>
+                <div fxLayout="row">
+                  <span style="padding-top: 6px;font-size:11px" class="paraText textCenter">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span>
+                </div>
+              </div>
+            </div>
+            <div fxFlex="25%" class="newViewClass">
+              <div class="dataContainer" fxLayout="column" fxFlexAlign="center">
+                <div fxLayout="row" fxFlex="50%" style="align-items: center;border-bottom: 1px solid rgb(241, 225, 163);" fxFlexAlign="center center">
+                  <span fxFlex="50%" class="textCenter">
+                    <mat-icon>person_pin</mat-icon>
+                  </span>
+                  <span fxFlex="50%">
+                    <p class="paraText" style="font-weight: bold;margin-bottom: 3px;">12343</p>
+                    <p class="paraText">New Views</p>
+                  </span>
+                </div>
+                <div fxLayout="row">
+                  <span style="padding-top: 6px;font-size:11px" class="paraText textCenter">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span>
+                </div>
+              </div>
+            </div>
+            <div fxFlex="25%" class="commentClass">
+              <div class="dataContainer" fxLayout="column" fxFlexAlign="center">
+                <div fxLayout="row" fxFlex="50%" style="align-items: center;border-bottom: 1px solid rgb(179, 247, 203);" fxFlexAlign="center center">
+                  <span fxFlex="50%" class="textCenter">
+                    <mat-icon>message</mat-icon>
+                  </span>
+                  <span fxFlex="50%">
+                    <p class="paraText" style="font-weight: bold;margin-bottom: 3px;">12343</p>
+                    <p class="paraText">Comments</p>
+                  </span>
+                </div>
+                <div fxLayout="row">
+                  <span style="padding-top: 6px;font-size:11px" class="paraText textCenter">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+            <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="50">
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
+                <mat-card class="example-card">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p>
+                      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
+                <mat-card class="example-card">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p>
+                      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+            </div>
+            <div id="userList" fxLayout="column" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="50">
+              <mat-card class="example-card" fxFlex="100">
+                <mat-card-header>
+                  <div fxFlex="50">Top Active Members</div>
+                  <div fxFlex="25">Views</div>
+                  <div fxFlex="25">Comments</div>
+                </mat-card-header>
+                <mat-card-content>
+                  <mat-list>
+                    <mat-list-item *ngFor="let list of userList">
+                      <div fxFlex="50">
+                        <mat-icon>person</mat-icon>
+                        <span style="position: relative;top: -6px;">{{list.name}}</span>
+                      </div>
+                      <div fxFlex="25">
+                        {{list.views}}
+                      </div>
+                      <div fxFlex="25">
+                        {{list.comments}}
+                      </div>
+                    </mat-list-item>
+                  </mat-list>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
